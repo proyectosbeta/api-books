@@ -15,6 +15,14 @@ npm install
 npm dev
 ```
 
+## Runnig Sonarqube
+
+Need Sonarqube and sonar-scanner
+
+```bash
+docker run -ti -v C:\Users\joseg\repositoriosGit\api-books:/usr/src --link sonarqube newtmitch/sonar-scanner
+```
+
 ## Requests
 
 ```text
