@@ -4,15 +4,15 @@ API Rest for books
 ## Running the app (production)
 
 ```bash
-    npm install
-    npm start
+npm install
+npm start
 ```
 
 ## Running the app (develpment)
 
 ```bash
-    npm install
-    npm dev
+npm install
+npm dev
 ```
 
 ## Requests
