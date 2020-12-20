@@ -11,7 +11,8 @@ exports.getAll = (async (req, res) => {
 // GET - Return a bok with specified ID.
 exports.get = (async (req, res) => {
 	try {
-		const book = await Book.findOne({ _id: req.params.id });
+        const book = await Book.findOne({ _id: req.params.id });
+        
 		res.send(book);
 	} catch {
 		res.status(404);
@@ -27,7 +28,8 @@ exports.add = (async (req, res) => {
         author: req.body.author,
         link: req.body.link,
         year: req.body.year,
-	});
+    });
+    
 	await book.save();
 	res.send(book);
 });
