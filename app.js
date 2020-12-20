@@ -28,4 +28,6 @@ mongoose
         app.listen(PORT, function() {
             console.log("Node server running on http://localhost:" + PORT);
         });
+
+        // @todo close database.
     });
