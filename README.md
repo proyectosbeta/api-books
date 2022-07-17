@@ -43,15 +43,32 @@ docker run -ti -v C:\Users\joseg\repositoriosGit\api-books:/usr/src --link sonar
 
 ## Try in API client
 
-### Method GET
+### Dev
+
+#### Method GET
 
 ```text
     http://localhost:3000/api/v1/books/
-    http://localhost:3000/api/v1/books/1
+    http://localhost:3000/api/v1/books/62d40cf2d61edb6db30f3cda
 ```
 
-### Method POST
+#### Method POST
 
 ```text
     http://localhost:3000/api/v1/books/
+```
+
+### Production
+
+#### Method GET
+
+```text
+    http://51.15.192.116:3030/api/v1/books
+    http://51.15.192.116:3030/api/v1/books/62d40cf2d61edb6db30f3cda
+```
+
+#### Method POST
+
+```text
+    http://51.15.192.116:3030/api/v1/books
 ```
