@@ -46,6 +46,12 @@ docker run -ti -v C:\Users\joseg\repositoriosGit\api-books:/usr/src --link sonar
 ### Method GET
 
 ```text
-    http://localhost:3000/v1/books/
-    http://localhost:3000/v1/books/1
+    http://localhost:3000/api/v1/books/
+    http://localhost:3000/api/v1/books/1
+```
+
+### Method POST
+
+```text
+    http://localhost:3000/api/v1/books/
 ```
