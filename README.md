@@ -1,6 +1,14 @@
 # API Books
 API Rest for books
 
+# Tecnologies
+
+* NodeJS v14.20.xxx
+* NPM 8.14.xxx
+* MongoDB v4.4.xxx
+* Docker
+* Sonarqube
+
 ## Running the app (production)
 
 ```bash
@@ -35,7 +43,7 @@ docker run -ti -v C:\Users\joseg\repositoriosGit\api-books:/usr/src --link sonar
 
 ## Try in API client
 
-### Method GET:
+### Method GET
 
 ```text
     http://localhost:3000/v1/books/
