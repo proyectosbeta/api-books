@@ -3,6 +3,7 @@
 - [update] Update package json file.
 - [refactor] Books.
 - [docs] Update readme file.
+- [feat] Add status in endpoint books.
 
 # v1.0.0
 
