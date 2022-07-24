@@ -1,6 +1,7 @@
 # v1.0.1
 
 - [update] Update package json file.
+- [refactor] Books.
 
 # v1.0.0
 
