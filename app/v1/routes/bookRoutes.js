@@ -3,10 +3,10 @@ const router = express.Router();
 const books = require("../../controllers/BookController");
 
 router
-  .post("/books", books.add)
-  .get("/books/:id", books.get)
-  .patch("/books/:id", books.edit)
-  .delete("/books:id", books.remove)
-  .get("/books", books.getAll);
+  .get("/", books.getAllBooks)
+  .get("/:bookId", books.getOneBook)
+  .post("/", books.createNewBook)
+  .patch("/:bookId", books.updateOneBook)
+  .delete("/:bookId", books.deleteOneBook);
 
 module.exports = router;

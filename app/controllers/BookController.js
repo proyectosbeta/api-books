@@ -1,79 +1,64 @@
 // File: controllers/Book.js
-const Book = require('../models/Book.js');
+const bookService = require("../services/bookService");
 
 // GET - Return all books in the DB.
-exports.getAll = (async (req, res) => {
-    const books = await Book.find();
-    
-	res.send(books)
-});
+const getAllBooks = async (req, res) => {
+  const allBooks = await bookService.getAllBooks();
+
+  res.send({
+    status: "OK",
+    data: allBooks,
+  });
+};
 
 // GET - Return a bok with specified ID.
-exports.get = (async (req, res) => {
-	try {
-        const book = await Book.findOne({ _id: req.params.id });
-        
-		res.send(book);
-	} catch {
-		res.status(404);
-		res.send({ error: "Book doesn't exist!" });
-	}
-});
+const getOneBook = async (req, res) => {
+  const book = await bookService.getOneBook(req.params.bookId);
 
-// POST - 
-exports.add = (async (req, res) => {
-	const book = new Book({
-		title: req.body.title,
-        description: req.body.description,
-        author: req.body.author,
-        link: req.body.link,
-        year: req.body.year,
-    });
-    
-	await book.save();
-	res.send(book);
-});
+  res.send(`Get book ${req.params.bookId}`);
+};
 
-// PATCH - 
-exports.edit = (async (req, res) => {
-	try {
-		const book = await Book.findOne({ _id: req.params.id });
+// POST - create book.
+const createNewBook = async (req, res) => {
+  const { body } = req;
 
-		if (req.body.title) {
-			book.title = req.body.title;
-		}
+  if (
+    !body.title ||
+    !body.description ||
+    !body.author ||
+    !body.link ||
+    !body.year
+  ) {
+    return;
+  }
 
-		if (req.body.description) {
-			book.description = req.body.description;
-        }
-        
-        if (req.body.author) {
-			book.author = req.body.author;
-        }
-        
-        if (req.body.link) {
-			book.link = req.body.link;
-        }
-        
-        if (req.body.year) {
-			book.year = req.body.year;
-		}
+  const createdBook = await bookService.createNewBook(body);
+  res.status(201).send({ status: "OK", data: createdBook });
+};
 
-		await book.save();
-		res.send(book);
-	} catch {
-		res.status(404);
-		res.send({ error: "Book doesn't exist!" });
-	}
-});
+// PATCH - edit book.
+const updateOneBook = async (req, res) => {
+  const updatedBook = await bookService.updateOneBook(req);
+  res.send(`Update book ${req.params.bookId}`);
+};
 
-// DELETE -
-exports.remove = (async (req, res) => {
-	try {
-		await Book.deleteOne({ _id: req.params.id });
-		res.status(204).send();
-	} catch {
-		res.status(404);
-		res.send({ error: "Book doesn't exist!" });
-	}
-});
+// DELETE - remove book.
+const deleteOneBook = async (req, res) => {
+  const deletedBook = await bookService.deleteOneBook(req);
+
+  if (deletedBook == 1) {
+    res.status(204);
+    res.send("Book deleted!!!");
+  } else {
+    res.status(404);
+    res.send({ error: "Book doesn't exist!" });
+  }
+};
+
+module.exports = {
+  getAllBooks,
+  getOneBook,
+  createNewBook,
+  updateOneBook,
+  deleteOneBook,
+};

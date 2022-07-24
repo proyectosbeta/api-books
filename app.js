@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 const mongoose = require("mongoose");
-const routes = require("./app/v1/routes/bookRoutes.js");
+const v1BookRouter = require("./app/v1/routes/bookRoutes.js");
 const globalConfig = require("./app/config/global.config.js");
 const PORT = globalConfig.PORT;
 
@@ -24,7 +24,7 @@ mongoose
     app.use(express.json());
     app.use(methodOverride());
 
-    app.use("/api/v1", routes);
+    app.use("/api/v1/books", v1BookRouter);
 
     // Start server.
     app.listen(PORT, function () {
