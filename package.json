@@ -1,8 +1,8 @@
 {
   "name": "api-books",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "API Rest for books",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
@@ -25,6 +25,7 @@
     "node": "14.15.3"
   },
   "dependencies": {
+    "apicache": "1.6.3",
     "body-parser": "1.20.0",
     "express": "4.18.1",
     "method-override": "3.0.0",

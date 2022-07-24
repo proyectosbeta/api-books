@@ -23,7 +23,6 @@ mongoose
     );
     app.use(express.json());
     app.use(methodOverride());
-
     app.use("/api/v1/books", v1BookRouter);
 
     // Start server.

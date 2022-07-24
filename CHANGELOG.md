@@ -1,3 +1,7 @@
+# v1.1.0
+
+- [feat] Add cache in the endpoint getAll books.
+
 # v1.0.1
 
 - [update] Update package json file.
