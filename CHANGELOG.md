@@ -4,6 +4,7 @@
 - [refactor] Books.
 - [docs] Update readme file.
 - [feat] Add status in endpoint books.
+- [fix] Books.
 
 # v1.0.0
 
