@@ -33,7 +33,7 @@ const createNewBook = async (req, res) => {
   }
 
   const createdBook = await bookService.createNewBook(body);
-  res.status(201).send({ status: "OK", data: createdBook });
+  res.status(201).send({ status: true, data: createdBook });
 };
 
 // PATCH - edit book.
@@ -46,12 +46,12 @@ const updateOneBook = async (req, res) => {
 const deleteOneBook = async (req, res) => {
   const deletedBook = await bookService.deleteOneBook(req);
 
-  if (deletedBook == 1) {
+  if (deletedBook > 0) {
     res.status(204);
-    res.send("Book deleted!!!");
+	res.send("Book deleted!!!");
   } else {
     res.status(404);
-    res.send({ error: "Book doesn't exist!" });
+	res.send({ error: "Book doesn't exist!" });
   }
 };
 

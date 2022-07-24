@@ -38,10 +38,13 @@ const createNewBook = (body) => {
 };
 
 const updateOneBook = async (req) => {
-  const { body, params } = req;
+  const {
+    body,
+    params: { bookId },
+  } = req;
 
   try {
-    const book = await Book.findOne({ _id: params.bookId });
+    const book = await Book.findOne({ _id: bookId });
 
     if (body.title) {
       book.title = body.title;
@@ -71,11 +74,12 @@ const updateOneBook = async (req) => {
 };
 
 const deleteOneBook = async (req) => {
-  const { params } = req;
+  const { params: { bookId } } = req;
 
   try {
-    const deletedBook = await Book.deleteOne({ _id: params.bookId });
-    return deletedBook.n;
+    const deletedBook = await Book.deleteOne({ _id: bookId });
+    
+    return deletedBook.deletedCount;
   } catch {
     return false;
   }
