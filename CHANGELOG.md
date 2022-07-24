@@ -2,6 +2,7 @@
 
 - [update] Update package json file.
 - [refactor] Books.
+- [docs] Update readme file.
 
 # v1.0.0
 
