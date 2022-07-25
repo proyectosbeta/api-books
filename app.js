@@ -4,6 +4,8 @@ const methodOverride = require("method-override");
 const mongoose = require("mongoose");
 const v1BookRouter = require("./app/v1/routes/bookRoutes.js");
 const globalConfig = require("./app/config/global.config.js");
+const swaggerUi = require('swagger-ui-express')
+const { swagger: v1SwaggerDocs } = require('./app/v1/swagger');
 const PORT = globalConfig.PORT;
 
 // Connect to MongoDB database.
@@ -23,6 +25,7 @@ mongoose
     );
     app.use(express.json());
     app.use(methodOverride());
+    app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(v1SwaggerDocs))
     app.use("/api/v1/books", v1BookRouter);
 
     // Start server.

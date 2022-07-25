@@ -1,3 +1,7 @@
+# v1.2.0
+
+- [feat] Add swagger.
+
 # v1.1.1
 
 - [fix] Endpoint book, method get.
