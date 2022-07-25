@@ -3,6 +3,7 @@
 - [feat] Add swagger.
 - [docs] Update readme file.
 - [feat] Change structure data for the books.
+- [docs] A code of the get method of books is changed.
 
 # v1.1.1
 
