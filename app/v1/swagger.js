@@ -47,33 +47,7 @@ const swagger = {
                     data: {
                       type: "array",
                       items: {
-                        type: "object",
-                        properties: {
-                          _id: {
-                            type: "string",
-                          },
-                          title: {
-                            type: "string",
-                          },
-                          description: {
-                            type: "string",
-                          },
-                          author: {
-                            type: "string",
-                          },
-                          link: {
-                            type: "string",
-                          },
-                          year: {
-                            type: "string",
-                            format: "date",
-                            description: "Year",
-                            example: "2022",
-                          },
-                          __v: {
-                            type: "number",
-                          },
-                        },
+                        $ref: "#/components/schemas/Book",
                       },
                     },
                   },
@@ -94,7 +68,38 @@ const swagger = {
       description: "API for books in Proyectos Beta",
     },
   ],
-  components: {},
+  components: {
+    schemas: {
+      Book: {
+        properties: {
+          _id: {
+            type: "string",
+          },
+          title: {
+            type: "string",
+          },
+          description: {
+            type: "string",
+          },
+          author: {
+            type: "string",
+          },
+          link: {
+            type: "string",
+          },
+          year: {
+            type: "string",
+            format: "date",
+            description: "Year",
+            example: "2022",
+          },
+          __v: {
+            type: "number",
+          },
+        },
+      },
+    },
+  },
 };
 
 module.exports = { swagger };
