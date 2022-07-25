@@ -1,3 +1,7 @@
+# v1.1.1
+
+- [fix] Endpoint book, method get.
+
 # v1.1.0
 
 - [feat] Add cache in the endpoint getAll books.

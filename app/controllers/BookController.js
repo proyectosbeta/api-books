@@ -15,7 +15,10 @@ const getAllBooks = async (req, res) => {
 const getOneBook = async (req, res) => {
   const book = await bookService.getOneBook(req.params.bookId);
 
-  res.status(200).send(`Get book ${req.params.bookId}`);
+  res.status(200).send({
+    status: true,
+    data: book,
+  });
 };
 
 // POST - create book.
