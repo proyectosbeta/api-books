@@ -2,6 +2,7 @@
 
 - [feat] Add swagger.
 - [docs] Update readme file.
+- [feat] Change structure data for the books.
 
 # v1.1.1
 

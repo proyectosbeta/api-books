@@ -6,7 +6,7 @@ const getAllBooks = async (req, res) => {
   const allBooks = await bookService.getAllBooks();
 
   res.status(200).send({
-    status: true,
+    success: true,
     data: allBooks,
   });
 };
@@ -16,7 +16,7 @@ const getOneBook = async (req, res) => {
   const book = await bookService.getOneBook(req.params.bookId);
 
   res.status(200).send({
-    status: true,
+    success: true,
     data: book,
   });
 };
@@ -36,7 +36,7 @@ const createNewBook = async (req, res) => {
   }
 
   const createdBook = await bookService.createNewBook(body);
-  res.status(201).send({ status: true, data: createdBook });
+  res.status(201).send({ success: true, data: createdBook });
 };
 
 // PATCH - edit book.

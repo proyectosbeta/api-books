@@ -41,7 +41,7 @@ const swagger = {
                 schema: {
                   type: "object",
                   properties: {
-                    status: {
+                    success: {
                       type: "boolean",
                     },
                     data: {
