@@ -23,6 +23,12 @@ npm install
 npm dev
 ```
 
+## Documentation
+
+### Access
+
+- [Oficial site](http://localhost:3000/api/v1/docs)
+
 ## Runnig Sonarqube
 
 Needed Docker, Sonarqube and sonar-scanner

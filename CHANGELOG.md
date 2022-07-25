@@ -1,6 +1,7 @@
 # v1.2.0
 
 - [feat] Add swagger.
+- [docs] Update readme file.
 
 # v1.1.1
 
