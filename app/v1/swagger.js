@@ -60,6 +60,49 @@ const swagger = {
           },
         },
       },
+      post: {
+        tags: ["Book"],
+        summary: "Create a book",
+        description: "Create a book",
+        requestBody: {
+          content: {
+            "application/json": {
+              schema: {
+                $ref: "#/components/schemas/Book",
+              },
+            },
+          },
+        },
+        responses: {
+          201: {
+            description: "Created a book",
+          },
+        },
+      },
+    },
+    "/books/{bookId}": {
+      get: {
+        tags: ["Book"],
+        summary: "Get a one book",
+        description: "Get a one book",
+        parameters: [
+          {
+            name: "bookId",
+            in: "path",
+            required: true,
+            description: "The id of a book",
+            type: "string",
+          },
+        ],
+        responses: {
+          200: {
+            description: "Return a one book",
+            schema: {
+              $ref: "#/components/schemas/Book",
+            },
+          },
+        },
+      },
     },
   },
   tags: [
@@ -71,6 +114,8 @@ const swagger = {
   components: {
     schemas: {
       Book: {
+        required: ["title", "description", "author", "link", "year"],
+        type: "object",
         properties: {
           _id: {
             type: "string",
@@ -94,7 +139,7 @@ const swagger = {
             example: "2022",
           },
           __v: {
-            type: "number",
+            type: "string",
           },
         },
       },
