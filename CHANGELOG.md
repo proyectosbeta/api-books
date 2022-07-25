@@ -1,6 +1,7 @@
 # v1.1.0
 
 - [feat] Add cache in the endpoint getAll books.
+- [refactor] Change a better cache in the endpoint getAll books.
 
 # v1.0.1
 

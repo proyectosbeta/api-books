@@ -1,12 +1,11 @@
 const express = require("express");
-const apicache = require("apicache");
+const apicache = require("apicache-plus");
 
 const router = express.Router();
-const cache = apicache.middleware;
 const books = require("../../controllers/BookController");
 
 router
-  .get("/", cache("2 minutes"), books.getAllBooks)
+  .get("/", apicache("2 minutes"), books.getAllBooks)
   .get("/:bookId", books.getOneBook)
   .post("/", books.createNewBook)
   .patch("/:bookId", books.updateOneBook)
