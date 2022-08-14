@@ -1,13 +1,13 @@
 "use strict";
 
-const { PORT, URL_DOMAIN } = require("../config/global.config");
-const versionSystem = "1.3.0";
+const { APP_PORT, URL_DOMAIN } = require("../config/global.config");
+const versionSystem = process.env.npm_package_version;
 const swagger = {
   openapi: "3.0.3",
   info: {
     title: "API Book",
     description: "API Book",
-    version: versionSystem,
+    version: versionSyste
     contact: {
       email: "josego85@gmail.com",
     },
@@ -18,12 +18,12 @@ const swagger = {
   },
   externalDocs: [
     {
-      url: `${URL_DOMAIN}:${PORT}/api/v1/docs`,
+      url: `${URL_DOMAIN}:${APP_PORT}/api/v1/docs`,
     },
   ],
   servers: [
     {
-      url: `${URL_DOMAIN}:${PORT}/api/v1`,
+      url: `${URL_DOMAIN}:${APP_PORT}/api/v1`,
       description: "Development server",
     },
   ],

@@ -7,7 +7,8 @@ const v1BookRouter = require("./app/v1/routes/bookRoutes.js");
 const globalConfig = require("./app/config/global.config.js");
 const swaggerUi = require("swagger-ui-express");
 const { swagger: v1SwaggerDocs } = require("./app/v1/swagger");
-const PORT = globalConfig.PORT;
+const APP_PORT = globalConfig.APP_PORT;
+const URL_DOMAIN = globalConfig.URL_DOMAIN;
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
@@ -37,8 +38,8 @@ mongoose
     app.use("/api/v1/books", v1BookRouter);
 
     // Start server.
-    app.listen(PORT, function () {
-      console.log("Node server running on http://localhost:" + PORT);
+    app.listen(APP_PORT, function () {
+      console.log(`Node server running on ${URL_DOMAIN}:${APP_PORT}`);
     });
 
     // @todo close database.

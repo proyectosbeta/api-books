@@ -9,6 +9,21 @@ API Rest for books
 * Docker
 * Sonarqube
 
+## Configuration
+
+### .env
+
+```bash
+cp .env.example .env
+```
+
+Change variables for .env
+
+```
+APP_PORT=3000
+URL_DOMAIN="https://api-books.proyectosbeta.net"
+```
+
 ## Running the app (production)
 
 ```bash

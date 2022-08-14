@@ -3,6 +3,7 @@
 ## v1.3.0
 
 - [feat] Add rate limiting.
+- [feat] Add .env file.
 
 ## v1.2.0
 
