@@ -8,6 +8,7 @@
 - [docs] A code of the get method of books is changed.
 - [docs] Add schema book in swagger document.
 - [docs] Add more endpoints on book in swagger document.
+- [update] Update package json file.
 
 ## v1.1.1
 

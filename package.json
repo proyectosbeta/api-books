@@ -1,7 +1,8 @@
 {
   "name": "api-books",
-  "version": "1.2.0",
   "description": "API Rest for books",
+  "version": "1.2.0",
+  "private": true,
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -15,15 +16,16 @@
   "keywords": [
     "books"
   ],
-  "author": "proyectosbeta",
+  "author": {
+    "name": "Proyectos Beta",
+    "email": "josego85@gmail.com",
+    "url": "https://proyectosbeta.net/"
+  },
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/proyectosbeta/api-books/issues"
   },
   "homepage": "https://github.com/proyectosbeta/api-books#readme",
-  "engines": {
-    "node": "14.15.3"
-  },
   "dependencies": {
     "apicache-plus": "2.3.1",
     "body-parser": "1.20.0",
@@ -33,7 +35,10 @@
   },
   "devDependencies": {
     "nodemon": "2.0.19",
-    "swagger-jsdoc": "6.2.1",
+    "swagger-jsdoc": "6.2.5",
     "swagger-ui-express": "4.5.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
