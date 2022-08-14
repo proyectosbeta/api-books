@@ -4,7 +4,7 @@ API Rest for books
 # Tecnologies
 
 * NodeJS v14.20.0
-* NPM 8.14.0
+* NPM 8.17.0
 * MongoDB v4.4.5
 * Docker
 * Sonarqube
