@@ -4,6 +4,7 @@
 
 - [feat] Add rate limiting.
 - [feat] Add .env file.
+- [fix] Swagger file.
 
 ## v1.2.0
 

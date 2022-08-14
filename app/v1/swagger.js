@@ -7,7 +7,7 @@ const swagger = {
   info: {
     title: "API Book",
     description: "API Book",
-    version: versionSyste
+    version: versionSystem,
     contact: {
       email: "josego85@gmail.com",
     },
