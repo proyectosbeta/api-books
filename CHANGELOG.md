@@ -1,5 +1,9 @@
 # Release Notes
 
+## v1.3.0
+
+- [feat] Add rate limiting.
+
 ## v1.2.0
 
 - [feat] Add swagger.

@@ -1,7 +1,7 @@
 "use strict";
 
 const { PORT, URL_DOMAIN } = require("../config/global.config");
-const versionSystem = "1.2.0";
+const versionSystem = "1.3.0";
 const swagger = {
   openapi: "3.0.3",
   info: {
