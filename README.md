@@ -84,12 +84,12 @@ docker run -ti -v C:\Users\joseg\repositoriosGit\api-books:/usr/src --link sonar
 #### Method GET
 
 ```text
-    http://51.15.192.116:3030/api/v1/books
-    http://51.15.192.116:3030/api/v1/books/62d40cf2d61edb6db30f3cda
+    https://books.proyectosbeta.net/api/v1/books
+    https://books.proyectosbeta.net/api/v1/books/62d40cf2d61edb6db30f3cda
 ```
 
 #### Method POST
 
 ```text
-    http://51.15.192.116:3030/api/v1/books
+    https://books.proyectosbeta.net/api/v1/books
 ```
