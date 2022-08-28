@@ -24,17 +24,15 @@ APP_PORT=3030
 URL_DOMAIN="https://books.proyectosbeta.net"
 ```
 
-## Running the app (production)
+## Install
 
 ```bash
 npm install
-npm start
 ```
 
 ## Running the app (develpment)
 
 ```bash
-npm install
 npm dev
 ```
 

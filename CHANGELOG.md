@@ -4,6 +4,7 @@
 
 - [update] Update package json file.
 - [build] Add build for production.
+- [docs] Update readme file.
 
 ## v1.3.0
 
