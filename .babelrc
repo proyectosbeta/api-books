@@ -1,0 +1,19 @@
+{
+  "presets": ["@babel/preset-env"],
+  "plugins": [
+    ["@babel/plugin-proposal-class-properties"],
+    [
+      "module-resolver",
+      {
+        "root": ["."],
+        "alias": {
+          "config": "./app/config",
+          "controllers": "./app/controllers",
+          "models": "./app/models",
+          "services": "./app/services",
+          "routes": "./app/v1/routes"
+        }
+      }
+    ]
+  ]
+}

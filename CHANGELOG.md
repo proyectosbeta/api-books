@@ -3,6 +3,7 @@
 ## v1.4.0
 
 - [update] Update package json file.
+- [build] Add build for production.
 
 ## v1.3.0
 
