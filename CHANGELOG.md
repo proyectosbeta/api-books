@@ -1,5 +1,9 @@
 # Release Notes
 
+## v1.4.0
+
+- [update] Update package json file.
+
 ## v1.3.0
 
 - [feat] Add rate limiting.
