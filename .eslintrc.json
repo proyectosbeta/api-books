@@ -1,0 +1,20 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true
+  },
+  "extends": "airbnb-base",
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "ignorePatterns": ["dist/"],
+  "rules": {
+    // // Reglas relacionadas con el diseño de API REST
+    // "no-delete-var": "error", // Evita eliminar variables, preferible usar HTTP DELETE en una API REST
+    // "no-useless-method-chaining": "error", // Evita encadenar métodos innecesarios en la API
+    // "consistent-resource-path": ["error", "/api/"], // Verifica la consistencia en los recursos de la API REST
+    // "prefer-exponential-backoff": "warn" // Recomienda el uso de un enfoque de repetición exponencial para las solicitudes fallidas
+    // // ... otras reglas ...
+  }
+}

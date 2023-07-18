@@ -1,11 +1,11 @@
-const Book = require("../models/Book");
+const Book = require('../models/Book');
 
-const getAllBooks = async (req, res) => {
+const getAllBooks = async () => {
   try {
     const allBooks = await Book.find();
     return allBooks;
   } catch (error) {
-    throw { status: 500, message: error };
+    throw new Error({ status: 500, message: error });
   }
 };
 
@@ -13,14 +13,17 @@ const getOneBook = async (bookId) => {
   try {
     const book = await Book.findOne({ _id: bookId });
     if (!book) {
-      throw {
+      throw new Error({
         status: 400,
         message: `Can't find book with the id '${bookId}'`,
-      };
+      });
     }
     return book;
   } catch (error) {
-    throw { status: error?.status || 500, message: error?.message || error };
+    throw new Error({
+      status: error?.status || 500,
+      message: error?.message || error,
+    });
   }
 };
 
@@ -69,16 +72,21 @@ const updateOneBook = async (req) => {
     await book.save();
     return book;
   } catch (error) {
-    throw { status: error?.status || 500, message: error?.message || error };
+    throw new Error({
+      status: error?.status || 500,
+      message: error?.message || error,
+    });
   }
 };
 
 const deleteOneBook = async (req) => {
-  const { params: { bookId } } = req;
+  const {
+    params: { bookId },
+  } = req;
 
   try {
     const deletedBook = await Book.deleteOne({ _id: bookId });
-    
+
     return deletedBook.deletedCount;
   } catch {
     return false;

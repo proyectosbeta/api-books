@@ -1,5 +1,10 @@
 # Release Notes
 
+## v1.5.0
+
+- [build] Add esLint.
+- [refactor] eslint.
+
 ## v1.4.0
 
 - [update] Update package json file.

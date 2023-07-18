@@ -1,5 +1,5 @@
 // File: controllers/Book.js
-const bookService = require("../services/bookService");
+const bookService = require('../services/bookService');
 
 // GET - Return all books in the DB.
 const getAllBooks = async (req, res) => {
@@ -26,11 +26,11 @@ const createNewBook = async (req, res) => {
   const { body } = req;
 
   if (
-    !body.title ||
-    !body.description ||
-    !body.author ||
-    !body.link ||
-    !body.year
+    !body.title
+    || !body.description
+    || !body.author
+    || !body.link
+    || !body.year
   ) {
     return;
   }
@@ -41,7 +41,7 @@ const createNewBook = async (req, res) => {
 
 // PATCH - edit book.
 const updateOneBook = async (req, res) => {
-  const updatedBook = await bookService.updateOneBook(req);
+  await bookService.updateOneBook(req);
   res.send(`Update book ${req.params.bookId}`);
 };
 
@@ -51,10 +51,10 @@ const deleteOneBook = async (req, res) => {
 
   if (deletedBook > 0) {
     res.status(204);
-	res.send("Book deleted!!!");
+    res.send('Book deleted!!!');
   } else {
     res.status(404);
-	res.send({ error: "Book doesn't exist!" });
+    res.send({ error: "Book doesn't exist!" });
   }
 };
 

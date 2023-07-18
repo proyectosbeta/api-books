@@ -1,19 +1,18 @@
-"use strict";
+const { APP_PORT, URL_DOMAIN } = require('../config/global.config');
 
-const { APP_PORT, URL_DOMAIN } = require("../config/global.config");
 const versionSystem = process.env.npm_package_version;
 const swagger = {
-  openapi: "3.0.3",
+  openapi: '3.0.3',
   info: {
-    title: "API Book",
-    description: "API Book",
+    title: 'API Book',
+    description: 'API Book',
     version: versionSystem,
     contact: {
-      email: "josego85@gmail.com",
+      email: 'josego85@gmail.com',
     },
     license: {
-      name: "GPLv3",
-      url: "https://opensource.org/licenses/GPL-3.0",
+      name: 'GPLv3',
+      url: 'https://opensource.org/licenses/GPL-3.0',
     },
   },
   externalDocs: [
@@ -24,30 +23,30 @@ const swagger = {
   servers: [
     {
       url: `${URL_DOMAIN}:${APP_PORT}/api/v1`,
-      description: "Development server",
+      description: 'Development server',
     },
   ],
   paths: {
-    "/books": {
+    '/books': {
       get: {
-        tags: ["Book"],
-        summary: "All books",
-        description: "All books",
+        tags: ['Book'],
+        summary: 'All books',
+        description: 'All books',
         responses: {
           200: {
-            description: "Return all books",
+            description: 'Return all books',
             content: {
-              "application/json": {
+              'application/json': {
                 schema: {
-                  type: "object",
+                  type: 'object',
                   properties: {
                     success: {
-                      type: "boolean",
+                      type: 'boolean',
                     },
                     data: {
-                      type: "array",
+                      type: 'array',
                       items: {
-                        $ref: "#/components/schemas/Book",
+                        $ref: '#/components/schemas/Book',
                       },
                     },
                   },
@@ -56,49 +55,49 @@ const swagger = {
             },
           },
           500: {
-            description: "Internal Server Error",
+            description: 'Internal Server Error',
           },
         },
       },
       post: {
-        tags: ["Book"],
-        summary: "Create a book",
-        description: "Create a book",
+        tags: ['Book'],
+        summary: 'Create a book',
+        description: 'Create a book',
         requestBody: {
           content: {
-            "application/json": {
+            'application/json': {
               schema: {
-                $ref: "#/components/schemas/Book",
+                $ref: '#/components/schemas/Book',
               },
             },
           },
         },
         responses: {
           201: {
-            description: "Created a book",
+            description: 'Created a book',
           },
         },
       },
     },
-    "/books/{bookId}": {
+    '/books/{bookId}': {
       get: {
-        tags: ["Book"],
-        summary: "Get a one book",
-        description: "Get a one book",
+        tags: ['Book'],
+        summary: 'Get a one book',
+        description: 'Get a one book',
         parameters: [
           {
-            name: "bookId",
-            in: "path",
+            name: 'bookId',
+            in: 'path',
             required: true,
-            description: "The id of a book",
-            type: "string",
+            description: 'The id of a book',
+            type: 'string',
           },
         ],
         responses: {
           200: {
-            description: "Return a one book",
+            description: 'Return a one book',
             schema: {
-              $ref: "#/components/schemas/Book",
+              $ref: '#/components/schemas/Book',
             },
           },
         },
@@ -107,39 +106,39 @@ const swagger = {
   },
   tags: [
     {
-      name: "Books",
-      description: "API for books in Proyectos Beta",
+      name: 'Books',
+      description: 'API for books in Proyectos Beta',
     },
   ],
   components: {
     schemas: {
       Book: {
-        required: ["title", "description", "author", "link", "year"],
-        type: "object",
+        required: ['title', 'description', 'author', 'link', 'year'],
+        type: 'object',
         properties: {
           _id: {
-            type: "string",
+            type: 'string',
           },
           title: {
-            type: "string",
+            type: 'string',
           },
           description: {
-            type: "string",
+            type: 'string',
           },
           author: {
-            type: "string",
+            type: 'string',
           },
           link: {
-            type: "string",
+            type: 'string',
           },
           year: {
-            type: "string",
-            format: "date",
-            description: "Year",
-            example: "2022",
+            type: 'string',
+            format: 'date',
+            description: 'Year',
+            example: '2022',
           },
           __v: {
-            type: "string",
+            type: 'string',
           },
         },
       },

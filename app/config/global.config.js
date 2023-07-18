@@ -1,11 +1,9 @@
-"use strict";
-
-const dotenv = require("dotenv");
+const dotenv = require('dotenv');
 
 dotenv.config();
 
-const APP_PORT = process.env.APP_PORT;
-const URL_DOMAIN = process.env.URL_DOMAIN;
+const { APP_PORT } = process.env;
+const { URL_DOMAIN } = process.env;
 
 module.exports = {
   APP_PORT,

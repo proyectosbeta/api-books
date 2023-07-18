@@ -105,3 +105,5 @@ dist
 
 # Sonarqube
 .scannerwork
+
+.directory
